@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body style="background-color: lightblue;">
+   <ul class="nav nav-pills nav-justified">
+  <li class="nav-item">
+    <a class="nav-link active" style="width: 200px; height: auto; " aria-current="page" href="/blogs">Homepage</a>
+  </li>
+  </ul>
+    <h1 class="display-1" style="margin-left: 450px;">Comment Here</h1>
+    <form action="/blogs/{{tweetid}}" method="post" style="margin-left: 450px;">
+
+    <div class="mb-3">
+  <label for="user_comment" class="form-label">Username:</label>
+   <input type="text"
+            id="user_comment"
+                name="user_comment"
+                    placeholder="Enter name">
+        <br>
+</div>
+<div class="mb-3">
+  <label for="tweet_comment" class="form-label">Comment here:</label>
+  <textarea class="form-control" name="tweet_comment" id="tweet_comment" cols="30" rows="10" 
+            placeholder="Share your opinion" style="width: 500px;"></textarea>
+            <br>
+</div>
+<button type="submit" class="btn btn-primary mb-3">Comment</button>
+
+
+{{!-- 
+
+        <label for="user_comment">Username:</label>
+        <input type="text"
+            id="user_comment"
+                name="user_comment"
+                    placeholder="Enter comment">
+        <br>
+        <label for="tweet_comment">Comment here:</label>
+        <textarea name="tweet_comment" id="tweet_comment" cols="30" rows="10" 
+            placeholder="Share your opinion"></textarea>
+            <br>
+        <button type="submit">Comment</button> --}}
+    </form>
+</body>
+</html>

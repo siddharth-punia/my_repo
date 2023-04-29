@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body style="background-color: lightblue;">
+    <ul class="nav nav-pills nav-justified">
+  <li class="nav-item">
+    <a class="nav-link active" style="width: 200px; height: auto; " aria-current="page" href="/blogs">Homepage</a>
+  </li>
+  </ul>
+    <h1 class="display-1" style="margin-left: 335px;"><b>Tweet by {{tweet.twitter_user}}</b> </h1>
+    {{!-- <h1>Tweet by {{tweet.twitter_user} </h1> --}}
+
+    <div style="margin-left: 350px;">
+      <h3> <div> <b> Username:</b> {{tweet.twitter_user}} </div></h3>
+       <h3><div>  <b>Tweet:</b> {{tweet.tweet_message}} </div></h3>
+
+    {{!-- <div>
+       {{#each comments as |comment|
+            {{comment.user_comment} : {{comment.tweet_comment}
+       {{/each}
+</div> --}}
+       <form action="/blogs/{{tweet.id}}/edit" method="get">
+       <button type="submit" class="btn btn-primary mb-3">EDIT</button>
+        </form>
+
+       <form action="/blogs/{{tweet.id}}?_method=DELETE" method="post">
+       <button type="submit" class="btn btn-primary mb-3">DELETE</button>
+            
+       </form>
+        <br>
+       <h1 class="display-4" style="margin-left: 135px;"><b>Want to comment? </b></h1>
+       <ul class="nav nav-pills nav-justified">
+  <li class="nav-item">
+    <a class="nav-link active" 
+        style="width: 200px; height: auto; margin-left: 235px" 
+            aria-current="page" 
+               href="/comment/{{tweet.id}}">Click here to comment</a>
+  </li>
+  </ul>
+       
+      {{!-- <h1 class="display-1" style="margin-left: 135px;"><b>Comments</b> </h1> --}}
+      <div>
+        <br>
+    {{#each comments as |comment|}}
+    <div>
+       <h4>    <i>Comment by</i>     <b style="color: #0d6efd;" > {{comment.user_comment}} </b>  :  {{comment.tweet_comment}}</h4>
+
+    </div>
+    {{/each}}
+</div>
+       {{!-- {{> comment_store} --}}
+    </div>
+</body>
+</html>

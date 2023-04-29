@@ -1,0 +1,13 @@
+<div class="store">
+    {{#each tweets as |tweet|}}
+    <div>
+       <b>{{tweet.twitter_user}}</b> : {{tweet.tweet_message}} 
+     <form action="/blogs/{{tweet.id}}" method="GET">
+       <button>Show</button>
+     </form>
+
+
+
+    
+    </div>
+{{/each}}

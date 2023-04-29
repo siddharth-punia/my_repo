@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body style="background-color: lightblue;">
+    <nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4n_urpJ9XpwOTdzBVbGvactwHrPagYQrTJPYjxfxLGkSyu7nJZVqRVGAeohnPgKMrnKE&usqp=CAU" alt="Logo" width="40" height="34"  class="d-inline-block align-text-top">
+      Twitter
+    </a>
+    
+ <ul class="nav nav-pills nav-justified" >
+  <li class="nav-item">
+    <a class="nav-link active" style="width: 200px; height: auto; " aria-current="page" href="/blogs">Homepage</a>
+  </li>
+  </ul>
+  </div>
+</nav>
+    <h1 class="display-1" style="margin-left: 350px;">Twitter Homepage</h1>
+    
+    <br>
+    <ul class="nav nav-pills nav-justified">
+  <li class="nav-item">
+    <a class="nav-link active" style="width: 200px; height: auto; margin-left: 550px" aria-current="page" href="/blogs/new">Click here to Tweet</a>
+  </li>
+  </ul>
+    {{!-- <a style="margin: 350px;" href="/blogs/new">Click here to Tweet</a> --}}
+   
+    </div>
+ 
+
+    <br>
+    <br>
+ {{#each tweets as |tweet|}}
+    <div style="margin-left: 510px;" >
+       {{!-- <b>{{tweet.twitter_user}</b> : {{tweet.tweet_message}
+     <form action="/blogs/{{tweet.id}" method="GET">
+       <button>Show</button>
+     </form> --}}
+    <br>
+    <div class="card" style="width: 18rem;">
+        
+  {{!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDhqx52WZk3mq7kPtaACVBmJrQVn03s80TjylbZ4WJaA&s" 
+    class="card-img-top" 
+        alt="..."
+            width="40" height="34"> --}}
+  <div class="card-body">
+    <h5 class="card-title" > <b>{{tweet.twitter_user}}</b></h5>
+    <p class="card-text">{{tweet.tweet_message}}</p>
+    <form action="/blogs/{{tweet.id}}" method="GET">
+    {{!-- <button type="button" class="btn btn-primary">Show</button> --}}
+       <button style="background-color:#0d6efd; color:aliceblue">Show</button>
+     </form>
+   
+  </div>
+</div>
+    </div>
+    {{/each}}
+   {{!-- {{> tweets_store} --}}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
