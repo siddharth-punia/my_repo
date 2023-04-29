@@ -1,0 +1,17 @@
+.area{
+    width: 800px;
+    background-color: aqua;
+    /* margin: auto; */
+}
+
+.but{
+   
+    
+    background-color: rgb(29, 155, 240);
+    color: white;
+    /* margin-left: 350px; */
+}
+
+.store{
+    margin-left: 50px;
+}
